@@ -1,0 +1,94 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:treyd_crypto/core/widgets/app_text_style.dart';
+import 'package:treyd_crypto/core/widgets/custom_widgets.dart';
+import '../../../../core/utils/app_colors.dart';
+import '../../../../routes/app_routes.dart';
+import '../../controller/profile_controller.dart';
+
+class PreferencesMobileView extends StatelessWidget {
+  const PreferencesMobileView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return GetBuilder<AccountController>(
+      init: AccountController(),
+      builder: (controller) {
+        return SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 15.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                buildHeaderText(text: 'Preferences'),
+                SizedBox(height: 40.h,),
+                buildPreferenceTitleText(title: 'Theme'),
+                SizedBox(height: 25.h,),
+                buildCustomPrefernceSwitch(controller, title: 'Dark Mode', subTitle: 'Use dark mode theme'),
+                SizedBox(height: 40.h,),
+                buildPreferenceTitleText(title: 'Notifications'),
+                SizedBox(height: 25.h,),
+                buildCustomPrefernceSwitch(controller, title: 'Email',color: AppColors.blackColor, subTitle: 'Get notifications via email'),
+                SizedBox(height: 20.h,),
+                buildCustomPrefernceSwitch(controller, title: 'SMS', subTitle: 'Get notifications via SMS (Charges may apply)'),
+                SizedBox(height: 40.h,),
+                buildPreferenceTitleText(title: 'Security'),
+                SizedBox(height: 25.h,),
+                buildCustomPrefernceSwitch(controller, title: '2FA',color: AppColors.blackColor, subTitle: 'Use 2FA for authorizing transactions'),
+                SizedBox(height: 30.h,),
+              ],
+            ),
+          ),
+        );
+      },
+    );
+  }
+}
+Widget buildPreferenceTitleText({required String title}){
+  return Text(title,style: AppTextStyle.textStyleMediumNormal.copyWith(
+      fontFamily: FontsFamily.OpenSansMedium
+  ),);
+}
+
+
+Widget buildCustomPrefernceSwitch(AccountController controller,{Color? color,required String title,required String subTitle}){
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Row(mainAxisAlignment: MainAxisAlignment.start,
+        children: [ Obx(() =>
+          Container(
+            width: 35.w,
+            child: Transform.scale(
+              scale: 0.7,
+              child: Switch(
+                value: controller.isSwitched.value,
+                onChanged: (value) {
+                  controller.toggleSwitch(value);
+                },
+              inactiveThumbColor: AppColors.greyColor500,
+                trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
+                inactiveTrackColor: AppColors.greyColor200,
+                activeColor: AppColors.primaryColor, // Adjust the color to look disabled
+              ),
+            ),
+          ),),
+          SizedBox(width: 20.w,),
+          Text(title,style: AppTextStyle.textStyleSmallNormal.copyWith(
+            color:color ?? AppColors.greyColor500,
+            fontFamily: FontsFamily.OpenSansRegular
+          ),),
+        ],
+      ),
+      Text(subTitle,style: AppTextStyle.textStyleXSmallNormal.copyWith(
+          color:AppColors.greyColor500,
+          fontFamily: FontsFamily.OpenSansRegular
+      ),),
+    ],
+  );
+}
+
+
+

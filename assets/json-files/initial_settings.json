@@ -1,0 +1,45 @@
+{
+  "app_name": "My App",
+  "fcm_key": "",
+  "default_theme": "light",
+  "light_theme": {
+    "primary_color": "#177DFF",
+    "primary_dark_color": "#177DFF",
+    "accent_color": "#e53935",
+    "accent_dark_color": "#e53935",
+    "scaffold_color": "#F5F5F5",
+    "text_color": "#000000",
+    "hint_color": "#9E9E9E"
+  },
+  "dark_theme": {
+    "primary_color": "#FF295C",
+    "primary_dark_color": "#FF295C",
+    "accent_color": "#e53935",
+    "accent_dark_color": "#e53935",
+    "scaffold_dark_color": "#4caf50",
+    "scaffold_color": "#000000",
+    "text_color": "#FFFFFF",
+    "hint_color": "#9E9E9E"
+  },
+  "google_maps_key": "",
+  "mobile_language": "en_US",
+  "app_version": "1.0.0",
+  "enable_version": "1",
+  "font_family": "Roboto",
+  "default_env_key": "dev1",
+  "application_type_id": 2,
+  "env": {
+    "dev1": {
+      "base_url": "",
+      "api_key": ""
+    },
+    "dev2": {
+      "base_url": "",
+      "api_key": ""
+    },
+    "demo": {
+      "base_url": "",
+      "api_key": ""
+    }
+  }
+}

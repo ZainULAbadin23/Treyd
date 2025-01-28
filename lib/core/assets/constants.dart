@@ -1,0 +1,73 @@
+/// =========================== SVG ASSETS ==============================
+const String kSvgAppLogo = "assets/images/svg/logo.svg";
+const String kSvgAppLogo1 = "assets/images/svg/logo1.svg";
+const String kSvgShow = "assets/images/svg/show.svg";
+const String kSvgFlag = "assets/images/svg/flag.svg";
+const String kSvgArrowDown = "assets/images/svg/arrow_down.svg";
+const String kSvgProfile = "assets/images/svg/profile.svg";
+const String kSvgCheck = "assets/images/svg/check.svg";
+const String kSvgCheck1 = "assets/images/svg/check1.svg";
+const String kSvgFinger_Scan = "assets/images/svg/finger_scan.svg";
+const String kSvgSettings = "assets/images/svg/setting.svg";
+const String kSvgSettings1 = "assets/images/svg/setting1.svg";
+const String kSvgRedGraph = "assets/images/svg/red_graph.svg";
+const String kSvgFilter = "assets/images/svg/filter.svg";
+const String kSvgArrowBack = "assets/images/svg/arrow_back.svg";
+const String kSvgArrowBackBlue = "assets/images/svg/arrow_back_blue.svg";
+const String kSvgCryptoLogo = "assets/images/svg/crypto_logo.svg";
+const String kSvgMax = "assets/images/svg/max.svg";
+const String kSvgMinus = "assets/images/svg/minus.svg";
+const String kSvgSearch = "assets/images/svg/search.svg";
+const String kSvgCross = "assets/images/svg/cross.svg";
+const String kSvgTrash = "assets/images/svg/trash.svg";
+const String kSvgLock = "assets/images/svg/lock.svg";
+const String kSvgLock1 = "assets/images/svg/lock1.svg";
+const String kSvgSecuritySafe = "assets/images/svg/security_safe.svg";
+const String kSvgCamera = "assets/images/svg/camera.svg";
+
+const String kSvgMoneySend = "assets/images/svg/money_send.svg";
+const String kSvgMoneyReceive = "assets/images/svg/money_recive.svg";
+const String kSvgBitcoin_convert = "assets/images/svg/bitcoin_convert.svg";
+const String kSvgNotification = "assets/images/svg/notification.svg";
+const String kSvgFinger_Scan2 = "assets/images/svg/finger_scan2.svg";
+const String kSvgAppOnboarding1 = "assets/images/svg/onboarding1.svg";
+const String kSvgAppOnboarding2 = "assets/images/svg/onboarding2.svg";
+const String kSvgAppOnboarding3 = "assets/images/svg/onboarding3.svg";
+const String kSvgTradeSummary = "assets/images/svg/trade_summary.svg";
+const String kSvgGraph = "assets/images/svg/graph.svg";
+const String kSvgHomeIcon = "assets/images/svg/home_icon.svg";
+const String kSvgHomeSelected = "assets/images/svg/home_selected.svg";
+const String kSvgWalletIcon = "assets/images/svg/wallet.svg";
+const String kSvgWalletSelected = "assets/images/svg/wallet_selected.svg";
+const String kSvgTradeIcon = "assets/images/svg/trade.svg";
+const String kSvgTradeSelected = "assets/images/svg/trade_selected.svg";
+const String kSvgShopIcon = "assets/images/svg/shop.svg";
+const String kSvgShopSelected = "assets/images/svg/shop_selected.svg";
+const String kSvgCopyIcon = "assets/images/svg/copy_icon.svg";
+const String kSvgNGNFlag = "assets/images/svg/ngn.svg";
+const String kSvgPlus = "assets/images/svg/plus.svg";
+const String kSvgBitcoinLogo = "assets/images/svg/bitcoin_logo.svg";
+const String kSvgConvert = "assets/images/svg/convert.svg";
+const String kSvgHeart = "assets/images/svg/heart.svg";
+const String kSvgTradeSummary1 = "assets/images/svg/trade_summary1.svg";
+const String kSvgTradePageSummary = "assets/images/svg/trade_page_summary.svg";
+const String kSvgFilter1 = "assets/images/svg/filter1.svg";
+const String kSvgUserEdit = "assets/images/svg/user_edit.svg";
+
+/// =========================== GIF ASSETS ==============================
+
+/// =========================== PNG ASSETS ==============================
+const String kPngCryptoLogo = "assets/images/png/crypto_logo.png";
+const String kPngQRCODE = "assets/images/png/qr_code.png";
+const String kPngGTBank = "assets/images/png/gt_bank.png";
+const String kPngAccessBank = "assets/images/png/access_bank.png";
+const String kPngCryptoLogo1 = "assets/images/png/crypto_logo1.png";
+const String kPngCard = "assets/images/png/card.png";
+const String kPngSliderImage = "assets/images/png/slider_image.png";
+const String kPngLaptop = "assets/images/png/laptop.png";
+const String kPngHeadPhones = "assets/images/png/headphones.png";
+
+/// =========================== JPG / JPEG ASSETS ==============================
+
+/// =========================== jSON ASSETS ==============================
+const String kInitialSettingJson = "assets/json-files/initial_settings.json";

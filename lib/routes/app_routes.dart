@@ -1,0 +1,43 @@
+abstract class Routes{
+  static const INITIAL='/';
+  static const ONBOARDING='/onboarding';
+  static const LOGIN='/login';
+  static const FORGOT_PASSWORD='/forgot-password';
+  static const OTP='/otp';
+  static const OTP_REG='/otp-reg';
+  static const CHANGE_PASSWORD='/change-password';
+  static const WELCOME_BACK_USER='/welcome-back-user';
+  static const REGISTER='/register';
+  static const TRANSACTION_PIN='/transaction-pin';
+  static const CREATE_USER='/create-user';
+  static const HOME='/home';
+  static const TRADE='/trade';
+  static const SHOP='/shop';
+  static const BOTTOM_NAVIGATION = '/bottom-navigation';
+  static const WALLET = '/wallet';
+  static const TRANSFER_CRYPTO= '/transfer-crypto';
+  static const TRANSFER_FIAT= '/transfer-fiat';
+  static const SELECT_FIAT= '/select-fiat';
+  static const SELECT_DEPOSIT_FIAT= '/select-deposit-fiat';
+  static const CONFIRM_CRYPTO= '/confirm-crypto';
+  static const CONFIRM_TRANSACTION= '/confirm-transaction';
+  static const FIAT_TRANSACTION= '/fiat-transaction';
+  static const FIAT_DEPOSIT_TRANSACTION= '/fiat-deposit-transaction';
+  static const DEPOSIT_CRYPTO= '/deposit-crypto';
+  static const DEPOSIT_FIAT= '/deposit-fiat';
+  static const CONFIRM_DEPOSIT= '/confirm-deposit';
+  static const CRYPTO_DEPOSIT_TRANSACTION= '/crypto-deposit-transaction';
+  static const SEARCH= '/search';
+  static const PRODUCT_SEARCH= '/product-search';
+  static const SWAP= '/swap';
+  static const SWAP_CONFIRM= '/swap-confirm';
+  static const PRODUCT_DETAIL= '/product-detail';
+  static const BUY_NOW= '/buy-now';
+  static const CONFIRM_ORDER= '/confirm-order';
+  static const ACCOUNT = '/account';
+  static const SECURITY = '/security';
+  static const MY_PROFILE = '/my-profile';
+  static const PREFERENCES = '/preferences';
+  static const NOTIFICATION = '/notification';
+
+}
