@@ -70,10 +70,10 @@ Widget buildCustomPreferenceSwitch(AccountController controller,{Color? color,re
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Row(mainAxisAlignment: MainAxisAlignment.start,
-        children: [ Obx(() =>
+        children: [
           Container(
             width: 35.w,
-            child: Transform.scale(
+            child:Transform.scale(
               scale: 0.7,
               child: Switch(
                 value:value,
@@ -83,8 +83,7 @@ Widget buildCustomPreferenceSwitch(AccountController controller,{Color? color,re
                 inactiveTrackColor: AppColors.greyColor200,
                 activeColor: AppColors.primaryColor, // Adjust the color to look disabled
               ),
-            ),
-          ),),
+            ),),
           SizedBox(width: 20.w,),
           Text(title,style: AppTextStyle.textStyleSmallNormal.copyWith(
             color:color ?? AppColors.greyColor500,

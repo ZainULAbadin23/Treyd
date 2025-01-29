@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 
 class AccountController extends GetxController{
-  var countryCode = "+234".obs; // Default country code
-  var phoneNumber = "".obs; // User-entered phone number
-  var password = "".obs; // User-entered password
-  var isPasswordVisible = false.obs; // Password visibility toggle
+  var countryCode = "+234".obs;
+  var phoneNumber = "".obs;
+  var password = "".obs;
+  var isPasswordVisible = false.obs;
 
-  // Methods
+
   void togglePasswordVisibility() {
     isPasswordVisible.value = !isPasswordVisible.value;
   }
@@ -19,7 +19,7 @@ class AccountController extends GetxController{
 
   void toggleDarkMode() {
     isDarkMode = !isDarkMode;
-    update(); // Notify listeners
+    update();
   }
 
   bool isEmailEnabled = false;
@@ -27,18 +27,17 @@ class AccountController extends GetxController{
 
   void toggleEmailNotifications() {
     isEmailEnabled = !isEmailEnabled;
-    update(); // Notify listeners
+    update();
   }
 
   void toggleSMSNotifications() {
     isSMSEnabled = !isSMSEnabled;
-    update(); // Notify listeners
+    update();
   }
 
   bool is2FAEnabled = false;
   void toggle2FA() {
     is2FAEnabled = !is2FAEnabled;
-    update(); // Notify listeners
+    update();
   }
-
 }
