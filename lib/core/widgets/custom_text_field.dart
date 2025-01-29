@@ -43,11 +43,13 @@ class CustomTextField extends StatelessWidget {
       required bool isFocused,
       required int? maxLength})? buildCounter;
   final bool isDropdownDisable;
+
   // final bool filled;
   // final Color fillColor;
   final bool showOutlineFocus;
   final EdgeInsetsGeometry? contentPadding;
   final TextAlign? textAlign;
+
   const CustomTextField({
     Key? key,
     this.iconData,
@@ -126,58 +128,64 @@ class CustomTextField extends StatelessWidget {
                     height: 20,
                   ),
                 TextFormField(
-                  textAlign: textAlign ?? TextAlign.start,
-                  onTap: onTap,
-                  onEditingComplete: onEditingComplete,
-                  onFieldSubmitted: onSubmitted,
-                  controller: controller,
-                  validator: validator,
-                  obscureText: isObscure,
-                  inputFormatters: textInputFormatter,
-                  keyboardType: keyboardType,
-                  textInputAction: textInputAction ?? TextInputAction.next,
-                  initialValue: initialValue,
-                  onChanged: onChanged,
-                  onSaved: onSaved,
-                  enabled: enabled,
-                  style: AppTextStyle.textStylexLarge.copyWith(
-                    fontFamily: FontsFamily.TsukimiMedium
-                  ),
-                  restorationId: restorationId,
-                  maxLines: maxLines ?? 1,
-                  maxLength: maxLength,
-                  maxLengthEnforcement: maxLengthEnforcement,
-                  buildCounter: buildCounter,
-                  decoration: InputDecoration(
-                    contentPadding: contentPadding,
-                    alignLabelWithHint: true,
-                    hintText: hintText,
-                    hintStyle: AppTextStyle.textStyleSmallNormal.copyWith(
-                        color: AppColors.greyColor500,
-                        fontFamily: FontsFamily.OpenSansRegular),
-                    fillColor: AppColors.whiteColor1,
-                    suffixIcon: suffixIcon,
-                    prefixIcon: prefixIcon,
-                    border: InputBorder.none,
+                    textAlign: textAlign ?? TextAlign.start,
+                    onTap: onTap,
+                    onEditingComplete: onEditingComplete,
+                    onFieldSubmitted: onSubmitted,
+                    controller: controller,
+                    validator: validator,
+                    obscureText: isObscure,
+                    inputFormatters: textInputFormatter,
+                    keyboardType: keyboardType,
+                    textInputAction: textInputAction ?? TextInputAction.next,
+                    initialValue: initialValue,
+                    onChanged: onChanged,
+                    onSaved: onSaved,
+                    enabled: enabled,
+                    style: AppTextStyle.textStylexLarge
+                        .copyWith(fontFamily: FontsFamily.TsukimiMedium),
+                    restorationId: restorationId,
+                    maxLines: maxLines ?? 1,
+                    maxLength: maxLength,
+                    maxLengthEnforcement: maxLengthEnforcement,
+                    buildCounter: buildCounter,
+                    decoration: InputDecoration(
+                      contentPadding: contentPadding,
+                      alignLabelWithHint: true,
+                      hintText: hintText,
+                      hintStyle: AppTextStyle.textStyleSmallNormal.copyWith(
+                          color: AppColors.greyColor500,
+                          fontFamily: FontsFamily.OpenSansRegular),
+                      fillColor: AppColors.whiteColor1,
+                      suffix: suffixIcon,
+                      prefixIcon: prefixIcon,
+                      border: UnderlineInputBorder(
+                          borderSide:
+                              BorderSide(color: AppColors.greyColor400)),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.greyColor400),
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: AppColors.greyColor400),
+                      ),
 
-                    // label: isTitleEnable! ? const Text('') :
-                    // Wrap(
-                    //   children: [
-                    //     Text(hintText!,style: AppTextStyle.textStyleXSmallNormal.apply(color: AppColors.greyColor),),
-                    //     Text(isRequired == true ?  " *":"", style:  AppTextStyle.textStyleSmallBold.copyWith(color: AppColors.redColor)),
-                    //   ],
-                    // ) ,
-                    labelStyle: labelStyle ??
-                        AppTextStyle.textStyleXSmallNormal
-                            .apply(color: AppColors.greyColor),
-                    errorStyle: errorStyle ??
-                        AppTextStyle.textStyleXSmallNormal.copyWith(
-                          color: AppColors.redColor,
-                          fontSize: 10,
-                        ),
-                    errorMaxLines: 2,
-                    ),
-                  ),
+                      // label: isTitleEnable! ? const Text('') :
+                      // Wrap(
+                      //   children: [
+                      //     Text(hintText!,style: AppTextStyle.textStyleXSmallNormal.apply(color: AppColors.greyColor),),
+                      //     Text(isRequired == true ?  " *":"", style:  AppTextStyle.textStyleSmallBold.copyWith(color: AppColors.redColor)),
+                      //   ],
+                      // ) ,
+                      labelStyle: labelStyle ??
+                          AppTextStyle.textStyleXSmallNormal
+                              .apply(color: AppColors.greyColor),
+                      errorStyle: errorStyle ??
+                          AppTextStyle.textStyleXSmallNormal.copyWith(
+                            color: AppColors.redColor,
+                            fontSize: 10,
+                          ),
+                      errorMaxLines: 2,
+                    ))
               ],
             )),
       ),
@@ -225,11 +233,13 @@ class CustomTextField1 extends StatelessWidget {
       required bool isFocused,
       required int? maxLength})? buildCounter;
   final bool isDropdownDisable;
+
   // final bool filled;
   // final Color fillColor;
   final bool showOutlineFocus;
   final EdgeInsetsGeometry? contentPadding;
   final TextAlign? textAlign;
+
   const CustomTextField1({
     Key? key,
     this.hintText = '',
@@ -376,7 +386,7 @@ class CustomTextField1 extends StatelessWidget {
                     errorBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(12),
                       borderSide:
-                      BorderSide(color: AppColors.redColor, width: 2),
+                          BorderSide(color: AppColors.redColor, width: 2),
                     ),
                   ),
                 ),

@@ -109,7 +109,6 @@ Widget _buildInputFields(TransferCryptoController controller) {
           return null;
         }, onTap: () {  },
       ),
-      Divider(thickness: 0.5, color: AppColors.greyColor500,),
     ],
   );
 }

@@ -20,28 +20,35 @@ class SearchMobileView extends StatelessWidget {
             SizedBox(height: 60.h),
             buildHeader(ontap: (){Get.back();}, title: 'Select Crypto'),
         SizedBox(height:20.h),
-        Container(
-          padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
-          decoration: BoxDecoration(
-            color: AppColors.whiteColor2,
-            borderRadius: BorderRadius.circular(12),
-          ),child:
-            TextField(
+            Container(
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
+              decoration: BoxDecoration(
+                color: AppColors.whiteColor2,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: TextField(
                 controller: searchTextController,
                 decoration: InputDecoration(
                   hintStyle: AppTextStyle.textStyleMediumNormal.copyWith(
-                      color: AppColors.greyColor500,
-                      fontFamily: FontsFamily.OpenSansRegular),
+                    color: AppColors.greyColor500,
+                    fontFamily: FontsFamily.OpenSansRegular,
+                  ),
                   border: InputBorder.none,
                   hintText: "Search",
-                  prefixIcon: SvgPicture.asset(
-                    kSvgSearch,
-                    fit: BoxFit.scaleDown,
+                  contentPadding: EdgeInsets.symmetric(vertical: 14.h), // Adjust vertical alignment
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.all(12.w), // Adjust padding to match text alignment
+                    child: SvgPicture.asset(
+                      kSvgSearch,
+                      fit: BoxFit.scaleDown,
+                    ),
                   ),
                 ),
                 textInputAction: TextInputAction.next,
                 keyboardType: TextInputType.name,
-                ),),
+              ),
+            ),
+
             Column(
               children: List.generate(10, (index) {
                 return Padding(

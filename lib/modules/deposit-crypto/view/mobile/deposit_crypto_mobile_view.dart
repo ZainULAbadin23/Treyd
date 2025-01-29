@@ -103,15 +103,11 @@ Widget _buildInputFields(DepositCryptoController controller) {
           Get.toNamed(Routes.SEARCH);
         },
         hintText: "Select Crypto",
-        keyboardType: TextInputType.number,
+        keyboardType: TextInputType.none,
         suffixIcon: kSvgArrowDown,
         validator: (String? value) {
           return null;
         },
-      ),
-      Divider(
-        thickness: 0.5,
-        color: AppColors.greyColor500,
       ),
       SizedBox(
         height: 20.h,

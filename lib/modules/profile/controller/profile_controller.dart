@@ -15,10 +15,30 @@ class AccountController extends GetxController{
     countryCode.value = code;
   }
 
-  var isSwitched = false.obs; // Observable variable
+  bool isDarkMode = false;
 
-  void toggleSwitch(bool value) {
-    isSwitched.value = value;
+  void toggleDarkMode() {
+    isDarkMode = !isDarkMode;
+    update(); // Notify listeners
+  }
+
+  bool isEmailEnabled = false;
+  bool isSMSEnabled = false;
+
+  void toggleEmailNotifications() {
+    isEmailEnabled = !isEmailEnabled;
+    update(); // Notify listeners
+  }
+
+  void toggleSMSNotifications() {
+    isSMSEnabled = !isSMSEnabled;
+    update(); // Notify listeners
+  }
+
+  bool is2FAEnabled = false;
+  void toggle2FA() {
+    is2FAEnabled = !is2FAEnabled;
+    update(); // Notify listeners
   }
 
 }

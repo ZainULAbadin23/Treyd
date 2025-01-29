@@ -33,7 +33,6 @@ class TransferCryptoMobileView extends StatelessWidget {
                 _buildTransferBalance(),
                 SizedBox(height: 40.h,),
                 _buildInputFields(controller,),
-                Divider(thickness: 0.5, color: AppColors.greyColor500,),
                 SizedBox(height: 30.h,),
                 Center(child: buildLoginButton(text: 'Continue',ontap: ()=>{Get.toNamed(Routes.CONFIRM_CRYPTO)})),
               ],

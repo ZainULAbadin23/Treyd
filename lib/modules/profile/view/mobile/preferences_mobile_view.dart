@@ -26,17 +26,29 @@ class PreferencesMobileView extends StatelessWidget {
                 SizedBox(height: 40.h,),
                 buildPreferenceTitleText(title: 'Theme'),
                 SizedBox(height: 25.h,),
-                buildCustomPrefernceSwitch(controller, title: 'Dark Mode', subTitle: 'Use dark mode theme'),
+                buildCustomPreferenceSwitch(value: controller.isDarkMode,
+                    onchanged: (value) {
+                      controller.toggleDarkMode();
+                    }, controller, title: 'Dark Mode', subTitle: 'Use dark mode theme'),
                 SizedBox(height: 40.h,),
                 buildPreferenceTitleText(title: 'Notifications'),
                 SizedBox(height: 25.h,),
-                buildCustomPrefernceSwitch(controller, title: 'Email',color: AppColors.blackColor, subTitle: 'Get notifications via email'),
+                buildCustomPreferenceSwitch(value: controller.isEmailEnabled,
+                    onchanged: (value) {
+                      controller.toggleEmailNotifications();
+                    },controller, title: 'Email',color: AppColors.blackColor, subTitle: 'Get notifications via email'),
                 SizedBox(height: 20.h,),
-                buildCustomPrefernceSwitch(controller, title: 'SMS', subTitle: 'Get notifications via SMS (Charges may apply)'),
+                buildCustomPreferenceSwitch(value: controller.isSMSEnabled,
+                    onchanged: (value) {
+                      controller.toggleSMSNotifications();
+                    },controller, title: 'SMS', subTitle: 'Get notifications via SMS (Charges may apply)'),
                 SizedBox(height: 40.h,),
                 buildPreferenceTitleText(title: 'Security'),
                 SizedBox(height: 25.h,),
-                buildCustomPrefernceSwitch(controller, title: '2FA',color: AppColors.blackColor, subTitle: 'Use 2FA for authorizing transactions'),
+                buildCustomPreferenceSwitch(value: controller.is2FAEnabled,
+                    onchanged: (value) {
+                      controller.toggle2FA();
+                    },controller, title: '2FA',color: AppColors.blackColor, subTitle: 'Use 2FA for authorizing transactions'),
                 SizedBox(height: 30.h,),
               ],
             ),
@@ -46,14 +58,14 @@ class PreferencesMobileView extends StatelessWidget {
     );
   }
 }
+
 Widget buildPreferenceTitleText({required String title}){
   return Text(title,style: AppTextStyle.textStyleMediumNormal.copyWith(
       fontFamily: FontsFamily.OpenSansMedium
   ),);
 }
 
-
-Widget buildCustomPrefernceSwitch(AccountController controller,{Color? color,required String title,required String subTitle}){
+Widget buildCustomPreferenceSwitch(AccountController controller,{Color? color,required String title,required String subTitle, required bool value, ValueChanged<bool>? onchanged}){
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -64,10 +76,8 @@ Widget buildCustomPrefernceSwitch(AccountController controller,{Color? color,req
             child: Transform.scale(
               scale: 0.7,
               child: Switch(
-                value: controller.isSwitched.value,
-                onChanged: (value) {
-                  controller.toggleSwitch(value);
-                },
+                value:value,
+                onChanged:onchanged,
               inactiveThumbColor: AppColors.greyColor500,
                 trackOutlineColor: MaterialStateProperty.all(Colors.transparent),
                 inactiveTrackColor: AppColors.greyColor200,

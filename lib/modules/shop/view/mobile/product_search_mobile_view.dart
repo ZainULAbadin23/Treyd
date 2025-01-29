@@ -25,27 +25,33 @@ class ProductSearchMobileView extends StatelessWidget {
             buildHeader(ontap: (){Get.back();}, title: 'Search anything...'),
             SizedBox(height:20.h),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8.w,vertical: 4.h),
+              padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 2.h),
               decoration: BoxDecoration(
                 color: AppColors.whiteColor2,
                 borderRadius: BorderRadius.circular(12),
-              ),child:
-            TextField(
-              controller: searchTextController,
-              decoration: InputDecoration(
-                hintStyle: AppTextStyle.textStyleMediumNormal.copyWith(
-                    color: AppColors.greyColor500,
-                    fontFamily: FontsFamily.OpenSansRegular),
-                border: InputBorder.none,
-                hintText: "Search",
-                prefixIcon: SvgPicture.asset(
-                  kSvgSearch,
-                  fit: BoxFit.scaleDown,
-                ),
               ),
-              textInputAction: TextInputAction.next,
-              keyboardType: TextInputType.name,
-            ),),
+              child: TextField(
+                controller: searchTextController,
+                decoration: InputDecoration(
+                  hintStyle: AppTextStyle.textStyleMediumNormal.copyWith(
+                    color: AppColors.greyColor500,
+                    fontFamily: FontsFamily.OpenSansRegular,
+                  ),
+                  border: InputBorder.none,
+                  hintText: "Search",
+                  contentPadding: EdgeInsets.symmetric(vertical: 14.h),
+                  prefixIcon: Padding(
+                    padding: EdgeInsets.all(12.w),
+                    child: SvgPicture.asset(
+                      kSvgSearch,
+                      fit: BoxFit.scaleDown,
+                    ),
+                  ),
+                ),
+                textInputAction: TextInputAction.next,
+                keyboardType: TextInputType.name,
+              ),
+            ),
             SizedBox(height: 30.h),
             _buildShopRow(controller),
           ],

@@ -25,6 +25,7 @@ class AppColors {
   static Color get redColorShade => parseColor("#E57373");
   static Color get redColorShade2 => parseColor("#EF9191");
 
+  static Color get lightBlueColor => parseColor("#E8F2FF");
   static Color get blueColorShade => parseColor("#42A5F5");
   static Color get greyColor800 => parseColor("#424242");
   static Color get greyColor700 => parseColor("#616161");

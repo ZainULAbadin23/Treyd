@@ -354,6 +354,18 @@ Widget buildRecommendedCard() {
             img: kPngCryptoLogo1,
           ),
         ),
+        Padding(
+          padding: EdgeInsets.only(right: 8.w),
+          child: CryptoCard(
+            img: kPngCryptoLogo,
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 8.w),
+          child: CryptoCard(
+            img: kPngCryptoLogo1,
+          ),
+        ),
       ],
     ),
   );
@@ -555,45 +567,48 @@ CustomConfirmdialog(BuildContext context) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             buildHorizontalPadding(
-              child: Container(
-                height: 378.h,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                    color: AppColors.whiteColor,
-                    borderRadius: BorderRadius.circular(0)),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    SvgPicture.asset(kSvgCheck1),
-                    SizedBox(
-                      height: 30.h,
-                    ),
-                    Text(
-                      "Successful",
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle.textStylexLLarge.copyWith(
-                          fontFamily: FontsFamily.TsukimiMedium,
-                          fontSize: 32.sp,
-                          color: AppColors.greyColor300),
-                    ),
-                    SizedBox(height: 10.h),
-                    Text(
-                      "Your transaction was completed successfully.",
-                      textAlign: TextAlign.center,
-                      style: AppTextStyle.textStyleSmallNormal.copyWith(
-                          fontFamily: FontsFamily.OpenSansRegular,
-                          color: AppColors.greyColor600),
-                    ),
-                    SizedBox(
-                      height: 40.h,
-                    ),
-                    buildCustomColorButton(
-                        text: 'Confirm',
-                        ontap: () => {Get.toNamed(Routes.BOTTOM_NAVIGATION)}),
-                  ],
+              child: Material(
+                color: Colors.transparent,
+                child: Container(
+                  height: 378.h,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: AppColors.whiteColor,
+                      borderRadius: BorderRadius.circular(0)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      SvgPicture.asset(kSvgCheck1),
+                      SizedBox(
+                        height: 30.h,
+                      ),
+                      Text(
+                        "Successful",
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle.textStylexLLarge.copyWith(
+                            fontFamily: FontsFamily.TsukimiMedium,
+                            fontSize: 32.sp,
+                            color: AppColors.greyColor300),
+                      ),
+                      SizedBox(height: 10.h),
+                      Text(
+                        "Your transaction was completed successfully.",
+                        textAlign: TextAlign.center,
+                        style: AppTextStyle.textStyleSmallNormal.copyWith(
+                            fontFamily: FontsFamily.OpenSansRegular,
+                            color: AppColors.greyColor600),
+                      ),
+                      SizedBox(
+                        height: 40.h,
+                      ),
+                      buildCustomColorButton(
+                          text: 'Confirm',
+                          ontap: () => {Get.toNamed(Routes.BOTTOM_NAVIGATION)}),
+                    ],
+                  ),
                 ),
               ),
             ),

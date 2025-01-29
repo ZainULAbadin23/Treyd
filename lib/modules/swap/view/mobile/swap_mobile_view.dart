@@ -1,3 +1,4 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,6 @@ import '../../../../core/utils/app_colors.dart';
 import '../../../../core/widgets/app_text_style.dart';
 import '../../../../core/widgets/custom_widgets.dart';
 import '../../../../routes/app_routes.dart';
-import '../../../deposit-fiat/controller/desposit_fiat_controller.dart';
 import '../../controller/swap_controller.dart';
 
 class SwapMobileView extends StatelessWidget {
@@ -29,11 +29,10 @@ class SwapMobileView extends StatelessWidget {
                 ),
                 buildHeaderText(text: 'Swap Crypto'),
                 SizedBox(
-                  height: 20.h,
+                  height: 45.h,
                 ),
-                Obx(
-                  () => _buildCryptoConvertDropdown(controller, title: 'From'),
-                ),
+                 _buildCryptoConvertDropdown(controller, title: 'From'),
+
                 SizedBox(
                   height: 20.h,
                 ),
@@ -41,9 +40,7 @@ class SwapMobileView extends StatelessWidget {
                 SizedBox(
                   height: 10.h,
                 ),
-                Obx(
-                  () => _buildCryptoConvertDropdown(controller, title: 'To'),
-                ),
+                 _buildCryptoConvertDropdown(controller, title: 'To'),
                 SizedBox(
                   height: 10.h,
                 ),
@@ -113,60 +110,7 @@ Widget _buildCryptoConvertDropdown(SwapController controller,
           fontFamily: FontsFamily.OpenSansRegular,
         ),
       ),
-      DropdownButton<String>(
-        value: controller.countryCode.value,
-        icon: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.w),
-          child: SvgPicture.asset(
-            kSvgArrowDown,
-            color: Colors.black,
-          ), // Dropdown icon
-        ),
-        isExpanded: true,
-        // Makes the DropdownButton take the full width
-        underline: SizedBox(),
-        // Removes the default underline
-        items: [
-          DropdownMenuItem(
-            value: "+234",
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start, // Align SVG and Text
-              children: [
-                SvgPicture.asset(kSvgCryptoLogo), // SVG icon
-                SizedBox(width: 8.w),
-                Text("Tether"),
-              ],
-            ),
-          ),
-          DropdownMenuItem(
-            value: "+1",
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SvgPicture.asset(kSvgBitcoinLogo),
-                SizedBox(width: 8.w),
-                Text("Bitcoin"),
-              ],
-            ),
-          ),
-          DropdownMenuItem(
-            value: "+44",
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                SvgPicture.asset(kSvgCryptoLogo),
-                SizedBox(width: 8.w),
-                Text("Etherium"),
-              ],
-            ),
-          ),
-        ],
-        onChanged: (value) {
-          if (value != null) {
-            controller.updateCountryCode(value); // Update country code
-          }
-        },
-      ),
+  CustomDropdown(controller: controller,),
       Divider(
         thickness: 0.5,
         color: AppColors.greyColor500,
@@ -245,4 +189,82 @@ Widget _buildDropDownTextField(
       ],
     )
   ]);
+}
+
+
+
+class CustomDropdown extends StatelessWidget {
+  final controller;
+  const CustomDropdown({Key? key, required this.controller}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Obx(
+            () =>DropdownButton2<String>(
+      value: controller.countryCode.value,
+      iconStyleData: IconStyleData(
+        icon: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 8.w),
+          child: SvgPicture.asset(kSvgArrowDown),
+        ),
+      ),
+      underline: SizedBox(),
+      isExpanded: true,
+      dropdownStyleData: DropdownStyleData(
+        decoration: BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5), // Shadow color
+              offset: Offset(0, 4), // Shadow offset
+              blurRadius: 6, // Shadow blur radius
+              spreadRadius: 2, // Shadow spread radius
+            ),
+          ],
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.white,
+        ),
+        offset: Offset(0, 6),
+      ),
+      items: [
+        DropdownMenuItem(
+          value: "+234",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(kSvgCryptoLogo),
+              SizedBox(width: 8.w),
+              Text("Tether"),
+            ],
+          ),
+        ),
+        DropdownMenuItem(
+          value: "+1",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(kSvgBitcoinLogo),
+              SizedBox(width: 8.w),
+              Text("Bitcoin"),
+            ],
+          ),
+        ),
+        DropdownMenuItem(
+          value: "+44",
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SvgPicture.asset(kSvgCryptoLogo),
+              SizedBox(width: 8.w),
+              Text("Etherium"),
+            ],
+          ),
+        ),
+      ],
+      onChanged: (value) {
+        if (value != null) {
+          controller.updateCountryCode(value);
+        }
+      },
+    ));
+  }
 }

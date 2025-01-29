@@ -64,7 +64,7 @@ Widget _buildTransferBalance() {
     child: Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColors.whiteColor2,
+        color: AppColors.lightBlueColor,
         borderRadius: BorderRadius.circular(16),
       ),
       height: 107.h,
